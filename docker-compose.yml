@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13
+    ports:
+      - "5501:5432"
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+#    volumes:
+#      - pg_db:/var/lib/postgresql/data
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5701:5672
+      - 15701:15672
+#    volumes:
+#      - rabbit_data:/var/lib/rabbitmq/
+#      - rabbit_logs:/var/log/rabbitmq
+#volumes:
+#  pg_db:
+#  rabbit_data:
+#  rabbit_logs:
